@@ -32,7 +32,7 @@ var totalRequests = prometheus.NewCounterVec(
 		Help: "Number of http requests.",
 	},
 	[]string{"method", "path", "app"},
-	[]string{},
+	//[]string{},
 )
 
 var responseStatus = prometheus.NewCounterVec(
@@ -41,7 +41,7 @@ var responseStatus = prometheus.NewCounterVec(
 		Help: "Status of http response",
 	},
 	[]string{"status", "app"},
-	[]string{},
+	//[]string{},
 )
 
 var httpDuration = promauto.NewHistogramVec(
@@ -50,7 +50,7 @@ var httpDuration = promauto.NewHistogramVec(
 		Help: "Duration of http requests.",
 	},
 	[]string{"method", "path", "app"},
-	[]string{},
+	//[]string{},
 )
 
 func metricsMiddleware(next http.Handler) http.Handler {
